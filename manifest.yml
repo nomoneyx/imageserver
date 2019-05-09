@@ -1,0 +1,14 @@
+---
+applications:
+  - name: imageclassifierserver
+    memory: 750M
+    instances: 1
+    random-route: true
+    path: target/imageclassifierserver-0.0.1-SNAPSHOT.jar
+    buildpack: https://github.com/cloudfoundry/java-buildpack
+    services:
+      - mydb
+    env:
+      SPRING_PROFILES_ACTIVE: cloud
+      DEBUG: "true"
+      debug: "true"
